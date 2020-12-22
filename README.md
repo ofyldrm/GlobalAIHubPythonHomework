@@ -1,1 +1,1 @@
-# python-de3vlerim
+# python-odevlerim
