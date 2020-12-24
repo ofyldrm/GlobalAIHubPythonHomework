@@ -1,0 +1,26 @@
+# python-odevlerim
+
+ name = "sayi"
+
+
+a = input(" ")
+print("1.{}".format(name), a) 
+a = int(a)
+print("Sayi değişkeninin veri tipi = ", type(a))
+b = input(' ')
+print("2.{}".format(name), b)
+ b = int(b)
+print("Sayi değişkeninin veri tipi = ", type(b))
+c = input('')
+print("3.{}".format(name), c)
+c = int(c)
+print("Sayi değişkeninin veri tipi = ", type(c))
+d = input('')
+print("4.{}".format(name), d)
+d = int(d)
+print("Sayi değişkeninin veri tipi = ", type(d))
+e = input(' ')
+print("5.{}".format(name), e)
+e = int(e)
+print("Sayi değişkeninin veri tipi = ", type(e))
+
