@@ -1,15 +1,25 @@
 # python-odevlerim
-vize1 = input("1. Vize:") 
-arasınav = input("arasınav") 
-Final = input("Final:") 
-sonuc = int(vize1)*(2/10) + int(arasınav)*(3/10) + int(Final)*(5/10) 
-if(sonuc>=90): 
-print("AA")  
-elif(70>sonuc>=90): 
-print("BB") 
-elif(50>sonuc>=70): 
-print("CC") 
-elif(30>sonuc>=50): 
-print("DD") 
-elif(sonuc>=30): 
-print("FF")
+vize1 = input("1. Vize:")
+project = input("2. Proje:")
+Final = input("Final:")
+ 
+sonuc = int(vize1)*(3/10) + int(project)*(2/10) + int(Final)*(5/10)
+ 
+if(sonuc >=90):
+    print("AA")
+elif(sonuc>=85):
+    print("BA")
+elif(sonuc>=80):
+    print("BB")
+elif(sonuc>=75):
+    print("CB")
+elif(sonuc>=70):
+    print("CC")
+elif(sonuc>=65):
+    print("DC")
+elif(sonuc>=60):
+    print("DD")
+elif(sonuc>=55):
+    print("FD")
+elif(sonuc>=50):
+    print("FF")
