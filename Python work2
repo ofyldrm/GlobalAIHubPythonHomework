@@ -1,0 +1,24 @@
+# python-odevlerim
+
+name2 = "Name : "
+name3 = "LastName : "
+age1 = "Age :"
+date1 = "Date Of Brith :"
+name = input("Please enter your name :")
+print("{}".format(name2), name)
+lname = input("Please enter your lastname :")
+print("{}".format(name3), lname)
+age = input("Please enter your age :")
+print("{}".format(age1), age)
+date = input("Please enter your date of brith :")
+print("{}".format(date1), date)
+
+
+if(int(age)<18):
+    print("\nYou can't go out because it's too dangerhous")
+
+elif(int(age)>18):
+      print("\nYou can go out too the street") 
+elif(int(age)==18):
+      print("\nIf you're 18, stay home for your health") 
+
