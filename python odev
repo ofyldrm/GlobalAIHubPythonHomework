@@ -1,25 +1,49 @@
-# python-odevlerim
-vize1 = input("1. Vize:")
-project = input("2. Proje:")
-Final = input("Final:")
- 
-sonuc = int(vize1)*(3/10) + int(project)*(2/10) + int(Final)*(5/10)
- 
-if(sonuc >=90):
-    print("AA")
-elif(sonuc>=85):
-    print("BA")
-elif(sonuc>=80):
-    print("BB")
-elif(sonuc>=75):
-    print("CB")
-elif(sonuc>=70):
-    print("CC")
-elif(sonuc>=65):
-    print("DC")
-elif(sonuc>=60):
-    print("DD")
-elif(sonuc>=55):
-    print("FD")
-elif(sonuc>=50):
-    print("FF")
+   import sqlite3
+database_connect = sqlite3.connect('sınıf.db')
+imlec= database_connect.cursor()
+imlec.execute("""CREATE TABLE IF NOT EXISTS ogrenciler(ad TEXT,tc İNTGER,vize İNTEGER,final İNTEGER,total İNTEGER)""")
+ad =str(input("Öğrenci Ad Soyad:"))
+while (True):
+    dl = int(input("Ders Adetini girin"))
+    if  5 < dl :
+        print("3 ila 5 arasında olmalıdır.")
+        continue
+    elif   3 <= dl <= 5:
+        print("Ders sayısı doğru")
+        break
+tc = (input("GİRDİĞİNİZ DERS ADETİ KADAR DERS YAZIN:"))
+hane = str(tc)
+
+while True:
+    vize = float(input("Öğrencinin Vize Notu:"))
+    print("Öğrencinin Vize Notu:", vize)
+    proje = float(input("Öğrencinin proje Notu:"))
+    print("Öğrencinin Proje Notu:", proje)
+    final = float(input("Öğrencinin Final Notu:"))
+    print("Final Notu:", final)
+    if final < 50:
+        print("Bu dersten kaldınız.")
+        break
+    elif final > 50:
+        print("Öğrencinin Final Notu:",final)
+    total =(vize*0.3+proje*0.2+final*0.5)
+    print("Dersin Ortalaması:",total)
+    if 90.00 < total <100.1:
+        print("Harf Notu: AA-Katsayı:4.0-Geçti")
+        break    
+    elif 69.99 < total <90.00:
+        print("Harf Notu:BB-Katsayı:3.0-Geçti")
+        break   
+    elif 49.99<total<69.99:
+        print("Harf Notu:CC-Katsayı:2.0-Geçti")
+        break
+    elif total <=44.99:
+        print("Harf Notu:FF-Katsayı 0.0-Kaldı")
+        break
+bilgi = (ad,tc,vize,final,total)
+def create_database(ad,tc,vize,final,total):
+    con = sqlite3.connect("database.db")
+    cursor = con.cursor()
+    kayit_no = 1
+    cursor.execute("INSERT INTO bilgi VALUES(?,?,?,?,?,?)",(ad,tc,vize,final,total,kayit_no,))
+    con.commit()
