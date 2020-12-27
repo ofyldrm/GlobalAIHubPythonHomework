@@ -1,3 +1,4 @@
+   ###### student course grade calculation#####
    import sqlite3
 database_connect = sqlite3.connect('sınıf.db')
 imlec= database_connect.cursor()
@@ -11,9 +12,32 @@ while (True):
     elif   3 <= dl <= 5:
         print("Ders sayısı doğru")
         break
-tc = (input("GİRDİĞİNİZ DERS ADETİ KADAR DERS YAZIN:"))
-hane = str(tc)
+    else:
+        print("Ders Sayısı Yanlış")
+        continue
+tc = (input("1.Dersin ismini yazın:"))
+hane1 = str(tc)
+tc = (input("2.dersin ismini yazın:"))
+hane2 = str(tc)
+tc = (input("3.dersin ismini yazın:"))
+hane3 = str(tc)
 
+secim = input("Lütfen Ortalaması Hesaplanack Dersi Seçiniz D1,D2,D3").upper()
+print(secim)
+if secim == "D1":
+    secim = D1
+    D1 = hane1
+    hane1 = secim
+ print(hane1, "Dersini Seçtiniz")
+if secim == "D2":
+    secim = D2
+    D2 = hane2
+    hane2 = secim
+ print(hane2, "Dersini Seçtiniz")
+if secim == "D3":
+    D3 = secim
+    secim = hane3
+ print(hane3, "Dersini Seçtiniz")
 while True:
     vize = float(input("Öğrencinin Vize Notu:"))
     print("Öğrencinin Vize Notu:", vize)
@@ -27,7 +51,7 @@ while True:
     elif final > 50:
         print("Öğrencinin Final Notu:",final)
     total =(vize*0.3+proje*0.2+final*0.5)
-    print("Dersin Ortalaması:",total)
+    print("{} Dersin Ortalaması:".format(secim), total)
     if 90.00 < total <100.1:
         print("Harf Notu: AA-Katsayı:4.0-Geçti")
         break    
